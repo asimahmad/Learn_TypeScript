@@ -159,14 +159,18 @@ let person: [number, string, boolean] = [1,'str', true];
  const emp = new Emp(3, 'Shawn', 'Developer')
 
 // Generics
-function getArray (items:any[]): any[]{
+function getArray<T> (items:T[]): T[]{
     return new Array().concat(items)
 }
 
-let intArray = getArray([1,2,3,4,5])
-let strArray = getArray(['a','b','c'])
+let intArray = getArray<number>([1,2,3,4,5])
+let strArray = getArray<string>(['a','b','c'])
 
-intArray.push('hello')
+//intArray.push('hello')
+
+intArray.push(6)
+
+
  
 
 
