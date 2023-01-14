@@ -120,15 +120,53 @@ let person: [number, string, boolean] = [1,'str', true];
 
  // classes
 
- class Person {
-     id: number
-     name: string
+
+ interface personInterface{  // interface with class
+    id: number
+    name: string
+    register(): string
+}
+
+ class Person implements personInterface {
+    id: number
+    name: string
 
      constructor(id: number, name: string){
         this.id = id
         this.name = name
      }
+
+     register(){
+         return `${this,name} is now registered.`
+     }
  }
 
  const Brad = new Person(1,'Brad')
+ // Brad.id = 4 gives error as it is private
+
+
+
+ // subclass
+ class Emp extends Person{
+     private position: string
+
+     constructor(id:number, name: string, position: string) {
+         super(id,name)
+         this.position = position
+     }
+ }
+
+ const emp = new Emp(3, 'Shawn', 'Developer')
+
+// Generics
+function getArray (items:any[]): any[]{
+    return new Array().concat(items)
+}
+
+let intArray = getArray([1,2,3,4,5])
+let strArray = getArray(['a','b','c'])
+
+intArray.push('hello')
  
+
+
