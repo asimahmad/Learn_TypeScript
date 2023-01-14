@@ -35,3 +35,59 @@ var Direction2;
     Direction2["Right"] = "Right";
 })(Direction2 || (Direction2 = {}));
 console.log(Direction2);
+//object
+const user = {
+    id: 1,
+    name: 'Asim'
+};
+const userData = {
+    id: 1,
+    name: 'Asim'
+};
+// Type assertion
+let cid = 1;
+let ccid = cid; // first way to do assertion.
+let cccid = cid; // second way to do assertion.
+// function
+function addNum(x, y) {
+    return x + y;
+}
+console.log(addNum(3, 2));
+// without return type (void)
+function log(message) {
+    console.log(message);
+}
+const user1 = {
+    id: 1,
+    name: 'Asim'
+};
+const p1 = 1;
+const add = (x, y) => (x + y);
+const sub = (x, y) => (x - y);
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this, name} is now registered.`;
+    }
+}
+const Brad = new Person(1, 'Brad');
+// Brad.id = 4 gives error as it is private
+// subclass
+class Emp extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Emp(3, 'Shawn', 'Developer');
+// Generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let intArray = getArray([1, 2, 3, 4, 5]);
+let strArray = getArray(['a', 'b', 'c']);
+//intArray.push('hello')
+intArray.push(6);

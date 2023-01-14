@@ -97,7 +97,7 @@ let person: [number, string, boolean] = [1,'str', true];
  }
  
  
- user1.id = 6 // it is only read only
+ //user1.id = 6 // it is only read only
 
  // type can be user for primitive and non-primitive types whereas interface can not.
  type point = string|number
