@@ -79,3 +79,56 @@ let person: [number, string, boolean] = [1,'str', true];
  function log(message: string | number): void {
     console.log(message)
  }
+
+
+ // interface
+
+ // interface and type are almost same but if you are describing an object use interface in prefrence.
+
+ interface userInterface{
+     readonly id: number
+     name: string
+     age?:number // this property is optional (?)
+ }
+
+ const user1: userInterface = {
+     id: 1,
+     name: 'Asim'
+ }
+ 
+ 
+ user1.id = 6 // it is only read only
+
+ // type can be user for primitive and non-primitive types whereas interface can not.
+ type point = string|number
+ const p1: point = 1
+
+ //interface point = string | number // can not use  with primitive or unions
+
+
+
+ // interface with functions.
+
+ interface MathFunc {
+     (x: number, y: number): number
+ }
+
+ const add: MathFunc = (x: number, y: number): number => (x+y)
+ const sub: MathFunc = (x: number, y: number): number => (x-y)
+
+
+
+ // classes
+
+ class Person {
+     id: number
+     name: string
+
+     constructor(id: number, name: string){
+        this.id = id
+        this.name = name
+     }
+ }
+
+ const Brad = new Person(1,'Brad')
+ 
